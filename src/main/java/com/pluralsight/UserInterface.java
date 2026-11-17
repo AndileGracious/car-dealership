@@ -1,7 +1,7 @@
 package com.pluralsight;
 
 import java.util.ArrayList;
-
+import java.util.Scanner;
 
 
 public class UserInterface {
@@ -21,6 +21,15 @@ public class UserInterface {
         for (Vehicle vehicle : vehicles) {
             System.out.println(vehicle.getVin() + "|" + vehicle.getYear() + "|" + vehicle.getMake() + "|" + vehicle.getModel() + "|" + vehicle.getVehicleType() + "|" + vehicle.getColor() + "|" + vehicle.getOdometer() + "|" + vehicle.getPrice());
         }
+
+    }
+    // Create scanner method to have the user select what they would like to do
+    public void display(){
+        Scanner myScanner = new Scanner(System.in);
+        System.out.println("Hello, please select one of the following options: ");
+        System.out.println(" 1. Lists All");
+        System.out.println(" 0. Exit");
+        int choice = myScanner.nextInt();
 
     }
 }
