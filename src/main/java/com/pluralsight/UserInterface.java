@@ -23,8 +23,37 @@ public class UserInterface {
         for (Vehicle vehicle : vehicles) {
             System.out.println(vehicle.getVin() + "|" + vehicle.getYear() + "|" + vehicle.getMake() + "|" + vehicle.getModel() + "|" + vehicle.getVehicleType() + "|" + vehicle.getColor() + "|" + vehicle.getOdometer() + "|" + vehicle.getPrice());
         }
+    }
+
+    private void processGetAllVehiclesRequest() {
+        displayVehicles(dealership.getAllVehicles());
+    }
+    private void processGetByPriceRequest(){
 
     }
+    private void processGetByMakeModelRequest(){
+
+    }
+    private void processGetByYearRequest(){
+
+    }
+    private void processGetByColorRequest(){
+
+    }
+    private void processGetByMileageRequest(){
+
+    }
+    private void processGetByVehicleTypeRequest(){
+
+    }
+    private void processGetByAddVehicleRequest(){
+
+    }
+    private void processRemoveVehicleRequest(){
+
+    }
+
+
     // Create scanner method to have the user select what they would like to do
     // Using switch case to display the Vehicles or exit depending on which choice they make
 
@@ -41,7 +70,7 @@ public class UserInterface {
 
             switch (choice) {
                 case 1:
-                    displayVehicles(dealership.getAllVehicles());
+                    processGetAllVehiclesRequest();
                     break;
                 case 0:
                     System.out.println("You exited");
@@ -50,4 +79,5 @@ public class UserInterface {
         }
 
     }
+
 }
