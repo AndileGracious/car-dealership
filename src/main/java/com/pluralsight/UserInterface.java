@@ -9,7 +9,7 @@ public class UserInterface {
     private Dealership dealership;
 
     // init method to load dealership from file so display can use it
-    private void init(){
+    private void init() {
         DealershipFileManager manager = new DealershipFileManager();
         this.dealership = manager.getDealership();
     }
@@ -28,22 +28,26 @@ public class UserInterface {
     // Create scanner method to have the user select what they would like to do
     // Using switch case to display the Vehicles or exit depending on which choice they make
 
-    public void display(){
-        init();
-        Scanner myScanner = new Scanner(System.in);
-        System.out.println("Hello, please select one of the following options: ");
-        System.out.println(" 1. Lists All");
-        System.out.println(" 0. Exit");
-        int choice = myScanner.nextInt();
+    public void display() {
 
-        switch (choice){
-            case 1:
-                displayVehicles(dealership.getAllVehicles());
-                break;
-            case 0:
-                System.out.println("You exited");
-                break;
+        int choice = -1;
+        while (choice != 0) {
+            init();
+            Scanner myScanner = new Scanner(System.in);
+            System.out.println("Hello, please select one of the following options: ");
+            System.out.println(" 1. Lists All");
+            System.out.println(" 0. Exit");
+            choice = myScanner.nextInt();
+
+            switch (choice) {
+                case 1:
+                    displayVehicles(dealership.getAllVehicles());
+                    break;
+                case 0:
+                    System.out.println("You exited");
+                    break;
+            }
         }
-    }
 
+    }
 }
