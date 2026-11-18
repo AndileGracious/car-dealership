@@ -48,10 +48,38 @@ public class Dealership {
     public void removeVehicle(Vehicle vehicle){
         inventory.remove(vehicle);
     }
+    public ArrayList<Vehicle>getAllVehicles(){
+        return inventory;
+    }
+    public ArrayList<Vehicle>getVehicleByMakeModel(String make, String model){
+        ArrayList<Vehicle>result = new ArrayList<>();
+        for (Vehicle vehicle : inventory) {
+            if (vehicle.getMake().equalsIgnoreCase(make) && vehicle.getModel().equalsIgnoreCase(model)){
+                result.add(vehicle);
+            }
+
+        }
+        return result;
+    }
+    public ArrayList<Vehicle>getVehicleByColor(String color) {
+        ArrayList<Vehicle>result = new ArrayList<>();
+        for (Vehicle vehicle : inventory) {
+            if (vehicle.getColor().equalsIgnoreCase(color)) {
+                result.add(vehicle);
+            }
+        }
+        return result;
+    }
+
+
+    public ArrayList<Vehicle>getVehicleByVehicleType(String vehicleType) {
+        ArrayList<com.pluralsight.Vehicle> result = new ArrayList<>();
+        for (Vehicle vehicle : inventory) {
+            if (vehicle.getVehicleType().equalsIgnoreCase(vehicleType)) {
+                result.add(vehicle);
+            }
+        }
+        return result;
+
+    }
 }
-
-
-
-
-
-
